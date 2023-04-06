@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serve": "nodemon --watch . server.js",
-    "start": "node server.js",
+    "start": "nodemon server.js"
   },
   "author": "Othmane Dendane",
   "license": "ISC",
@@ -19,3 +18,4 @@
     "nodemon": "^2.0.21"
   }
 }
+
