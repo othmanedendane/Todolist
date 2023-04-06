@@ -1,13 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require ('cors');
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/todo", {
+
+
+mongoose.connect(process.env.MONGODB_API, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -45,4 +50,4 @@ app.get('/todo/complete/:id', async (req, res) => {
 })
 
 
-app.listen(3007, () => console.log("Server is running on port 3007"));
+app.listen(process.env.PORT || 3007, () => console.log("Server is running on port 3007"));
